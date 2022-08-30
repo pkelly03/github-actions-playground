@@ -13,4 +13,4 @@ jobs:
           YESTERDAY=$(date --date='1 day ago' +'%Y-%m-%dT%T')
           TODAY=$(date +'%Y-%m-%dT%T')
           echo "curl https://search-data-parity.shuttercorp.net//compare/snowflake-solr/reindex?from=$YESTERDAY&to=$TODAY"
-          curl https://search-data-parity.shuttercorp.net//compare/snowflake-solr/reindex?from=$YESTERDAY&to=$TODAY
+          curl https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?fields=country_currency_desc,exchange_rate,record_date&filter=record_date:gte:2015-01-01
