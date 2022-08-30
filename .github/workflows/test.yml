@@ -10,5 +10,6 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: |
-          today="${date +'%Y-%m-%dT%T'}"
-          echo "curl https://search-data-parity.shuttercorp.net//compare/snowflake-solr/reindex?to=$today"
+          TODAY=$(date +'%Y-%m-%dT%T')
+          echo "Got to here"
+          echo "curl https://search-data-parity.shuttercorp.net//compare/snowflake-solr/reindex?to=$TODAY"
