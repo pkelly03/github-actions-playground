@@ -1,4 +1,4 @@
-name: Cron Demo
+name: Cron Demo for Yesterday 1
 on: [push]
 jobs:
   Explore-GitHub-Actions:
