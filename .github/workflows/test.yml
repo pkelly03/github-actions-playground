@@ -5,12 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: |
-          yesterday=${date --date='1 day ago' +'%Y-%m-%dT%T'}
           today=${date +'%Y-%m-%dT%T'}
-          echo "curl https://search-data-parity.shuttercorp.net//compare/snowflake-solr/reindex?from=$yesterday&to=$today"
+          echo "curl https://search-data-parity.shuttercorp.net//compare/snowflake-solr/reindex?to=$today"
