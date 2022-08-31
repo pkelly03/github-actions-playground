@@ -12,5 +12,7 @@ jobs:
       - run: |
           YESTERDAY=$(date --date='1 day ago' +'%Y-%m-%d')
           TODAY=$(date +'%Y-%m-%d')
-          echo "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?fields=country_currency_desc,exchange_rate,%20record_date&filter=record_date:gte:$YESTERDAY"
-          curl -XGET 'https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?fields=country_currency_desc,exchange_rate,record_date&filter=record_date:gte:$YESTERDAY'
+          MONTH=$(date --date='1 month ago' +'%Y-%m-%d')
+          echo $MONTH
+          echo "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?fields=country_currency_desc,exchange_rate,%20record_date&filter=record_date:gte:$MONTH"
+          curl -XGET "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/rates_of_exchange?fields=country_currency_desc,exchange_rate,record_date&filter=record_date:gte:$MONTH"
